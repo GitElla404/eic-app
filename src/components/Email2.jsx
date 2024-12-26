@@ -13,7 +13,7 @@ const Email2 = () => {
     setMessageVisible(false);
 
     try {
-      const response = await fetch("http://localhost:8000/user/", {
+      const response = await fetch("https://eicccc.onrender.com/user/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
