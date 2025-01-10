@@ -36,7 +36,7 @@ const Navbarr = () => {
       <div className="flex items-center justify-between max-w-screen-xl mx-auto">
         <div className="text-2xl font-semibold font-[Metrophobic] w-[50%] md:w-auto">
           <a href="/eic-app" className="text-lg font-medium focus:border-none font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105 active:border-none">
-            <img src={Logo} alt="Logo" className="h-8 w-auto" />
+            <img src={Logo} alt="Logo" className="h-8 w-auto focus:outline-none" />
           </a>
         </div>
 

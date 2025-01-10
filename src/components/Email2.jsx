@@ -57,11 +57,11 @@ const Email2 = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           required
-          className="p-3 rounded-l-lg text-sm text-primarytxt w-80 focus:outline-none focus:ring-2 focus:ring-accent md:p-4 md:text-lg"
+          className="p-3 rounded-l-lg text-sm text-primarytxt w-80 focus:outline-none md:p-4 md:text-lg"
         />
         <button
           type="submit"
-          className="bg-secondary text-white px-4 py-3 w-[40%] rounded-r-lg text-xs font-semibold hover:bg-accent-dark focus:outline-none focus:ring-2 md:py-3.5 md:px-5 md:w-[30%] md:text-lg"
+          className="bg-secondary text-white px-4 py-3 w-[40%] rounded-r-lg text-xs font-semibold hover:bg-accent-dark focus:outline-none md:py-3.5 md:px-5 md:w-[30%] md:text-lg"
         >
           {loading ? "Signing..." : "Sign Up"}
         </button>
