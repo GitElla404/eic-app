@@ -1,38 +1,74 @@
 import React, { useState } from 'react';
 import Logo from '../images/logo.png';
-import { motion } from 'framer-motion';  
+import { motion } from 'framer-motion';
 import { IoIosMenu, IoMdClose } from 'react-icons/io';
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Navbarr = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
+
+  const handleServicesClick = () => {
+    const serviceButton = document.getElementById('services');
+    if (serviceButton) {
+      serviceButton.click();
+    }
+  };
+
+  const handleProductsClick = () => {
+    const productsButton = document.getElementById('products');
+    if (productsButton) {
+      productsButton.click();
+    }
+  };
+
+
+
+
   return (
-    <nav className="bg-[#f7f9fe] text-[#020511] px-6 py-4 sticky top-0 z-50 shadow-lg">
+    <nav className="bg-background text-[#020511] px-10 py-4 sticky top-0 z-50 shadow-lg">
       <div className="flex items-center justify-between max-w-screen-xl mx-auto">
         <div className="text-2xl font-semibold font-[Metrophobic] w-[50%] md:w-auto">
-        <a href="#home-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">
-          <img src={Logo} alt="Logo" className="h-10 w-auto" />
+          <a href="/eic-app" className="text-lg font-medium focus:border-none font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105 active:border-none">
+            <img src={Logo} alt="Logo" className="h-8 w-auto" />
           </a>
         </div>
 
-        <div className="hidden md:flex space-x-10">
-          <a href="#home-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Home</a>
-          <a href="#journey-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">About</a>
-          <a href="#services-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Services</a>
-          <a href="#trainings-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Training</a>
-          <a href="#team-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Team</a>
-          <a href="#contact-section" className="text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Contact Us</a>
+        <div className="hidden md:flex space-x-6">
+          <a href="/eic-app" className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105">Home</a>
+          <a href="#journey-section" className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105">About</a>
+          <a
+            href="#services"
+            onClick={handleServicesClick}
+            className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105"
+          >
+            Services
+          </a>
+          <a
+            href="#products"
+            onClick={() => {
+              handleProductsClick();
+              document.getElementById('products-section').click();
+            }}
+            className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105"
+          >
+            Products
+          </a>
+          <a href="#trainings" className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105">Trainings</a>
+          <a href="#team" className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105">Team</a>
+          <a href="#contact" className="text-md font-medium font-[Metrophobic] hover:text-primary transition duration-300 transform hover:scale-105">Contact Us</a>
         </div>
 
         <div>
-        <motion.div
+          <motion.div
             animate={{
-              scale: [0.9, 1, 0.9], 
+              scale: [0.9, 1, 0.9],
               transition: {
                 duration: 1,
                 repeat: Infinity,
@@ -40,24 +76,27 @@ const Navbarr = () => {
               }
             }}
           >
-          <a
-            href="#book-demo"
-            onClick={toggleModal} 
-            className="bg-[#254ce5] text-white p-2 rounded-full font-semibold font-[Metrophobic] hover:bg-[#254ce5] hover:scale-105 text-[10px] transition duration-300 ease-in-out md:text-base md:px-8 py-3"
-          >
-            Book a Free Call
-          </a>
+            <a
+                href="#book-demo"
+                onClick={toggleModal} className='flex items-center bg-secondary text-white p-1.5 rounded-full font-semibold font-[Metrophobic] hover:bg-slate-50 hover:text-secondary hover:border-black hover:border-2 hover:scale-105 text-[9px] transition duration-300 ease-in-out md:text-sm md:px-6 md:py-3'>
+              <div
+              >
+                Book a Free Call
+
+              </div>
+              <MdOutlineKeyboardArrowRight className='text-white text-lg md:text-xl font-semibold hover:text-secondary' />
+            </a>
           </motion.div>
         </div>
 
         <div className="md:hidden flex items-center">
-          
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-[#020511] text-2xl focus:outline-none transition-transform transform hover:scale-110"
-            >
-              <IoIosMenu />
-            </button>
+
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-[#020511] text-2xl focus:outline-none transition-transform transform hover:scale-110"
+          >
+            <IoIosMenu />
+          </button>
         </div>
       </div>
 
@@ -65,13 +104,26 @@ const Navbarr = () => {
       <div
         className={`md:hidden transition-all ease-in-out duration-300 ${isMobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
       >
-        <div className="bg-[#f7f9fe] text-[#020511] space-y-6 px-6 py-6">
-          <a href="#home-section" className="block text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Home</a>
-          <a href="#journey-section" className="block text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">About</a>
-          <a href="#services-section" className="block text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Services</a>
-          <a href="#trainings-section" className="block text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Training</a>
-          <a href="#team-section" className="block text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Team</a>
-          <a href="#contact-section" className="block text-lg font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Contact Us</a>
+        <div className="bg-[#f7f9fe] text-[#020511] text-sm space-y-3 px-6 py-3">
+          <a href="/eic-app" className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Home</a>
+          <a href="#journey-section" className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">About</a>
+          <a
+            href="#services"
+            onClick={handleServicesClick}
+            className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105"
+          >
+            Services
+          </a>
+          <a
+            href="#products"
+            onClick={handleProductsClick}
+            className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105"
+          >
+            Products
+          </a>
+          <a href="#trainings" className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Training</a>
+          <a href="#team" className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Team</a>
+          <a href="#contact" className="block font-medium font-[Metrophobic] hover:text-[#254ce5] transition duration-300 transform hover:scale-105">Contact Us</a>
         </div>
       </div>
 

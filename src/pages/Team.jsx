@@ -24,7 +24,7 @@ const Team = () => {
   ];
 
   return (
-    <section className="md:py-20 md:px-8 p-6 bg-[#f7f9fe] animate-fadeIn">
+    <section className="md:py-20 md:px-8 p-6 bg-[#f7f9fe] animate-fadeIn" id="team">
       <div className="container mx-auto text-center md:px-20 px-7">
         <h1 className="md:text-4xl text-3xl font-[Metrophobic] font-bold text-[#020511] mb-12 animate-slideInUp">Meet the Team</h1> 
         

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import HomeImg from '../images/homeimg.png';
+import HomeImg from '../images/homeimg.jpg';
 import Email from '../components/Email';
 
 const Homee = () => {
@@ -14,12 +14,13 @@ const Homee = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-r from-indigo-600 via-blue-500 to-teal-500 py-20 px-8 md:px-24 transition-opacity duration-10 ease-in-out">
-      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+    // <section className="min-h-screen bg-gradient-to-r from-indigo-600 via-blue-500 to-teal-500 py-20 px-8 md:px-24 transition-opacity duration-10 ease-in-out">
+    <section id="home-section" className="md:min-h-screen bg-primary py-10 md:py-20 px-8 md:px-24 transition-opacity duration-10 ease-in-out">
+      <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-9 items-center">
         
         <div className="text-center md:text-left text-white">
           <h1
-            className={`text-4xl md:text-6xl font-serif font-bold leading-tight mb-6 transition-all duration-700 ${
+            className={`text-3xl md:text-5xl font-serif font-bold leading-tight mb-4 transition-all duration-700 ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ transitionDelay: '0ms' }}
@@ -27,7 +28,7 @@ const Homee = () => {
             Transforming Talents into Assets
           </h1>
           <p
-            className={`text-lg md:text-xl text-gray-200 mb-8 transition-all duration-700 ${
+            className={`text-sm md:text-lg text-gray-200 mb-4 transition-all duration-700 ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{ transitionDelay: '200ms' }}
@@ -63,7 +64,7 @@ const Homee = () => {
           <img
             src={HomeImg}
             alt="Business consulting and AI-powered systems"
-            className="w-[80%] max-w-sm rounded-lg shadow-xl object-cover transition-transform transform hover:scale-105 md:w-full md:max-w-lg"
+            className="w-[80%] max-w-sm rounded-lg shadow-xl object-cover transition-transform transform hover:scale-105 md:w-full md:max-w-md"
           />
         </div>
       </div>

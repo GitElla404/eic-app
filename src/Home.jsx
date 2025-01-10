@@ -9,6 +9,7 @@ import Team from './Pages/Team';
 import Contact from './Pages/Contact';
 
 const Home = () => {
+  
   return (
     <div className="bg-slate-300">
       <Navbarr />
